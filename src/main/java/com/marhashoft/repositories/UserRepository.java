@@ -11,6 +11,11 @@ import java.util.Optional;
 public class UserRepository {
 
     public User getUserById(Long id) {
+
+        if (id == null) {
+            throw new RuntimeException("Por favor, informe um id para pesquisar");
+        }
+
         Optional<User> user = getAll().stream()
                 .filter(u -> u.getId().equals(id))
                 .findFirst();
@@ -24,7 +29,6 @@ public class UserRepository {
     }
 
     public List<User> getAll() {
-        System.out.println("Listando todos os usuários");
         List<User> users = new ArrayList<>();
         users.add(new User(1L, "Moab", "moab@gmail.com"));
         users.add(new User(2L, "Pedro", "pedro@gmail.com"));

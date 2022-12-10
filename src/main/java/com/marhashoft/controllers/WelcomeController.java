@@ -8,6 +8,6 @@ public class WelcomeController {
 
     @GetMapping
     public String welcome() {
-        return "Bem vindo ao programando Java no interior";
+        return "Bem vindo ao programando Java no interior promovido pela MarhaSoft";
     }
 }
